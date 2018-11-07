@@ -24,5 +24,17 @@ which is 64 hexadecimal characters and where each hexadecimal character represen
 
 [RFC2898](http://www.ietf.org/rfc/rfc2898.txt)
 
+## Hashcat Usage Example:
+#### Generated Data with WPA PMK Generator
+```
+SSID: linkedin
+Password: 12345
+PMK: 1C82477156E66458585008F845155866F1DA534EC8AEB45A9300A38111B47A00
+sha1:4096:bGlua2VkaW4=:HIJHcVbmZFhYUAj4RRVYZvHaU07IrrRakwCjgRG0egA=
+```
+#### Brute force all passwords length 1-8 with possible characters 0-9 (Numbers)
+```
+hashcat64.exe -a 3 --increment -m 12000 sha1:4096:bGlua2VkaW4=:HIJHcVbmZFhYUAj4RRVYZvHaU07IrrRakwCjgRG0egA= ?d?d?d?d?d?d?d?d
+```
 ## License
 MIT License
